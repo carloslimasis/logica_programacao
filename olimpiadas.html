@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+
+<script>
+	var mostra = function(frase) {
+	    document.write(frase + "<br/>");
+	};
+
+	var anoComoTexto = prompt("Informe o ano das últimas olímpiadas:");
+	var anoDeCopa = parseInt(anoComoTexto);
+	var anoLimite = prompt("Qual o ano limite?");
+
+	while(anoDeCopa <= anoLimite) {
+	    mostra(anoDeCopa + " é ano das olímpiadas!");
+	    anoDeCopa += 4;
+	}
+	mostra("Ufa! Esses foram os anos das olímpiadas até " + anoLimite);
+</script>

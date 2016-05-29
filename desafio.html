@@ -1,0 +1,65 @@
+<meta charset="utf-8">
+
+<script>
+	
+	var quantidadeAcertos = 0;
+	var quantidadeNumerosSorteados = 6;
+	var numerosSorteados = [];
+	var jogoDoUsuario = [];
+
+	var pulaLinha = function() {
+		document.write("<br>");
+	};
+
+	var mostra = function(frase) {
+		document.write(frase);
+		pulaLinha();
+	};
+
+	var sortearNumeros = function() {
+		var numeroJaSorteado;
+		while(numerosSorteados.length < 6) {
+			if(numeroJaSorteado !== Math.round(Math.random() * 60)){
+				numerosSorteados.push(Math.round(Math.random() * 60));	
+				numeroJaSorteado = Math.round(Math.random() * 60);
+			}
+		}
+	}
+
+	var adicionaNumeroAoJogoDoUsuario = function(msg) {
+		
+		var numeroDoUsuario = parseInt(prompt(msg));
+		var numeroJaEscolhido = jogoDoUsuario.some(function(numero) {
+			return numero == numeroDoUsuario;
+		});
+
+		numerosSorteados.some(function(numero){
+			if(numero == numeroDoUsuario)
+				quantidadeAcertos++;
+		});
+
+		if(numeroJaEscolhido) {
+			alert("Número já escolhido, por favor informe um número diferente: ");
+			adicionaNumeroAoJogoDoUsuario(msg);
+		} else {
+			jogoDoUsuario.push(numeroDoUsuario);
+		}
+
+		return numeroDoUsuario;
+	}
+
+	sortearNumeros();
+
+	alert("Olá, bem-vindo a loterica!");
+	var nomeDoJogador = prompt("Qual o seu nome?");
+	alert("Olá, " + nomeDoJogador + " vamos começar? Escolha 6 números para o seu jogo! ");
+
+	mostra(nomeDoJogador + " o primeiro número escolhido foi: " + adicionaNumeroAoJogoDoUsuario("Diga o primeiro número "));
+	mostra(nomeDoJogador + " o segundo número escolhido foi: " + adicionaNumeroAoJogoDoUsuario("Diga o segundo número "));
+	mostra(nomeDoJogador + " o terceiro número escolhido foi: " + adicionaNumeroAoJogoDoUsuario("Diga o terceiro número "));
+	mostra(nomeDoJogador + " o quarto número escolhido foi: " + adicionaNumeroAoJogoDoUsuario("Diga o quarto número "));
+	mostra(nomeDoJogador + " o quinto número escolhido foi: " + adicionaNumeroAoJogoDoUsuario("Diga o quinto número "));
+	mostra(nomeDoJogador + " o sexto número escolhido foi: " + adicionaNumeroAoJogoDoUsuario("Diga o sexto número "));
+	mostra(nomeDoJogador + " a quantidade de acertos foi: " + quantidadeAcertos);
+
+</script>

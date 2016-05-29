@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<script>
+  var pulaLinha = function() {
+    document.write("<br>");
+  };
+
+  var mostra = function(frase) {
+      document.write(frase);
+      pulaLinha();
+  };
+
+  mostra("Usando funções para melhorar o código");
+
+  var ano = 2012;
+  mostra("Eu nasci em : " + (ano - 25));
+  mostra("Adriano nasceu em : " + (ano - 26));
+  mostra("Paulo nasceu em : " + (ano - 32));
+
+
+  var eu = 26;
+  var minhaIrma = 23;
+  var diferenca = eu - minhaIrma;
+  document.write("Nossa diferença de idade é " + diferenca);
+
+  var anoAtual = 2016;
+  var anoChegadaPortugueses = 1500;
+  var diferencaEmAnos = anoAtual - anoChegadaPortugueses;
+
+  var media = 28;
+  var geracoes = diferencaEmAnos / media;
+
+  document.write("Se passaram " + diferenca + " gerações.");
+
+  var teste = function {
+    console.log("teste")
+  }
+</script>

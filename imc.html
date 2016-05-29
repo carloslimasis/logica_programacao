@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+
+<script>
+  var pulaLinha = function() {
+    document.write("<br>");
+  };
+
+  var mostra = function(frase) {
+      document.write(frase);
+      pulaLinha();
+  };
+
+  var calculaIMC = function(altura, peso) {
+    return peso / (altura * altura); 
+  };
+  
+  var nome = prompt("Bom dia qual o seu nome? ");
+  mostra("Bem-vindo, " + nome);
+
+  var peso = prompt(nome + " qual o seu peso? ");
+  var altura = prompt(nome + " qual a sua altura? ");
+
+  var imc = calculaIMC(altura, peso);
+  var indiceObesidadeSevera = 35;
+
+  mostra("Seu IMC é: " + imc);
+
+  var diferencaObsidadeSeveraImc = indiceObesidadeSevera - imc;
+
+  if(imc > indiceObesidadeSevera) {
+    mostra("Você está com obesidade severa.");    
+  } else {
+    mostra("Você está a " + diferencaObsidadeSeveraImc +  " pontos do índice de obesidade severa.");
+  }
+
+  var idade = prompt("Quantos anos você tem?");
+  var dias = idade * 365;
+  document.write("Você já viveu " + dias + " dias de vida");
+
+  var batimentos = dias * 24 * 60 * 80;
+  document.write("Seu coração já bateu " + batimentos 
+                  + " vezes. Haja coração!");
+
+  if(imc > 18.5 && imc < 35) {
+    mostra("OK! Seu IMC está entre os dois limites.");
+  }
+
+</script>

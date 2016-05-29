@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+
+<input type="text" id="numero" />
+<input type="submit" value="Compare com meu segredo!" id="adivinhar">
+
+<script>
+
+	var segredos = [16, 34, 37, 42, 50, 58];
+
+	var caixaDoNumero = document.getElementById("numero");
+
+	var botaoClicado = function() {
+	
+		var acertou = segredos.some(function(segredo) {
+			return segredo == caixaDoNumero.value;
+		});
+
+		if(acertou) {
+			alert("Parabéns! Você acertou o número secreto.");
+		} else {
+			alert("Infelizmente você errou.");
+		} 
+	}
+
+	var botaoAdivinhar = document.getElementById("adivinhar");
+	botaoAdivinhar.onclick = botaoClicado;
+</script>
